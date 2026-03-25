@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ffb4ab",
+              "error-container": "#93000a",
+              "surface-bright": "#353940",
+              "on-tertiary-fixed-variant": "#005048",
+              "on-secondary-container": "#9cbac1",
+              "surface-tint": "#00daf3",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2d3137",
+              "primary-fixed": "#9cf0ff",
+              "inverse-surface": "#dfe2eb",
+              "surface": "#10141a",
+              "secondary-fixed-dim": "#adccd2",
+              "outline-variant": "#3a494a",
+              "tertiary-fixed-dim": "#46dcc9",
+              "primary-fixed-dim": "#00daf3",
+              "background": "#10141a",
+              "surface-container-lowest": "#0a0e14",
+              "secondary": "#adccd2",
+              "on-surface-variant": "#b9caca",
+              "on-secondary-fixed": "#001f24",
+              "secondary-fixed": "#c9e8ef",
+              "primary": "#f0fcff",
+              "surface-container-low": "#181c22",
+              "tertiary": "#e9fff9",
+              "surface-variant": "#31353c",
+              "inverse-primary": "#006875",
+              "on-tertiary": "#003731",
+              "on-secondary-fixed-variant": "#2e4b51",
+              "on-secondary": "#17353a",
+              "surface-container-highest": "#31353c",
+              "on-tertiary-fixed": "#00201c",
+              "on-error": "#690005",
+              "tertiary-fixed": "#69f9e5",
+              "surface-container": "#1c2026",
+              "on-background": "#dfe2eb",
+              "outline": "#849495",
+              "on-surface": "#dfe2eb",
+              "tertiary-container": "#63f4e0",
+              "on-primary-container": "#006b78",
+              "primary-container": "#84edff",
+              "secondary-container": "#2e4b51",
+              "surface-container-high": "#262a31",
+              "on-tertiary-container": "#006e63",
+              "on-primary": "#00363d",
+              "on-primary-fixed": "#001f24",
+              "surface-dim": "#10141a",
+              "on-primary-fixed-variant": "#004f58"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(12px);
+      }
+      .cyber-glow {
+        box-shadow: 0 0 20px rgba(0, 218, 243, 0.08);
+      }
+      .data-strip {
+        height: 2px;
+        background: linear-gradient(90deg, #00daf3 0%, #006b78 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#10141a]/80 backdrop-blur-xl border-b border-[#3a494a]/20 shadow-[0_0_20px_rgba(0,245,255,0.08)]">
+<nav class="flex justify-between items-center px-8 py-4 max-w-none w-full">
+<div class="text-2xl font-bold tracking-tighter text-[#00f5ff] font-['Space_Grotesk']">Tekluv</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Home</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#00f5ff] border-b-2 border-[#00f5ff] pb-1" href="#">Articles</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Innovations</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Research</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#b9caca] hover:text-[#00f5ff] transition-colors">search</button>
+<button class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 font-headline text-sm font-bold uppercase tracking-widest scale-95 active:scale-90 transition-transform">Subscribe</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20">
+<!-- Hero Section / Featured Article -->
+<section class="px-8 max-w-7xl mx-auto mb-20">
+<div class="relative group overflow-hidden bg-surface-container-low">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
+<div class="lg:col-span-7 relative h-[400px] lg:h-[600px] overflow-hidden">
+<img alt="featured tech article" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="high-tech neural interface with glowing cyan fiber optic filaments and ethereal digital data streams in a dark cinematic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD8wpIm26Yc1UFRBphLjtKUPC8_Re4u0O83NFkr6GIMNfAO9zznbrIxh5LuALBjp50N1K7mRWINqNRhJnISYy7rjDBb2vC83p4sgjxn1xXbsr4giPU21LuSxQE-RYgfbAVdiAIfOlQBrdYcN4RcWJVAZWvoT7gwGvgaOOeQJUZHQXBHYw9VKdEL4kW4vOzc2b2v1KulOkG-OYal1HyUMayuX2_Z4y7c7k2lYBjlEOoS20Opo6-h6mVUcukhDN1Qo4pzNAAfTzkQGC_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="lg:col-span-5 p-12 flex flex-col justify-center bg-surface-container border-l border-outline-variant/20">
+<div class="inline-block px-3 py-1 mb-6 border border-primary-fixed-dim/30 bg-primary-fixed-dim/5">
+<span class="font-label text-xs font-bold text-primary-fixed-dim uppercase tracking-widest">Featured Report</span>
+</div>
+<h1 class="font-headline text-5xl font-bold text-primary mb-6 leading-tight tracking-tighter">The Emergence of Cyber-Arachnid Surveillance</h1>
+<p class="text-on-surface-variant text-lg mb-8 font-light leading-relaxed">How autonomous micro-scale drones are redefining the boundaries of urban security and decentralized network integrity in Neo-Tokyo.</p>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<p class="font-headline text-sm text-primary uppercase tracking-wider">Dr. Aris Thorne</p>
+<p class="text-xs text-on-surface-variant uppercase">Senior Architect • 4 min read</p>
+</div>
+</div>
+<button class="flex items-center gap-2 font-headline text-primary-fixed-dim group-hover:gap-4 transition-all uppercase tracking-widest text-sm font-bold">
+                            Read Full Dossier <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="data-strip absolute bottom-0 left-0 w-full"></div>
+</div>
+</section>
+<!-- Category Filter Strip -->
+<section class="px-8 max-w-7xl mx-auto mb-16">
+<div class="flex flex-wrap gap-4 items-center justify-between border-b border-outline-variant/10 pb-6">
+<div class="flex gap-8 overflow-x-auto no-scrollbar">
+<button class="font-headline text-primary-fixed-dim text-sm uppercase tracking-widest font-bold whitespace-nowrap">Latest</button>
+<button class="font-headline text-on-surface-variant hover:text-primary text-sm uppercase tracking-widest whitespace-nowrap transition-colors">Cyber-Arachnids</button>
+<button class="font-headline text-on-surface-variant hover:text-primary text-sm uppercase tracking-widest whitespace-nowrap transition-colors">Quantum Computing</button>
+<button class="font-headline text-on-surface-variant hover:text-primary text-sm uppercase tracking-widest whitespace-nowrap transition-colors">Decentralized Protocols</button>
+<button class="font-headline text-on-surface-variant hover:text-primary text-sm uppercase tracking-widest whitespace-nowrap transition-colors">Biotech</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label text-xs uppercase tracking-widest">
+<span>Filter By:</span>
+<button class="flex items-center gap-1 border border-outline-variant/30 px-3 py-1 hover:border-primary-fixed-dim transition-colors">
+                        Relevance <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bento Article Grid -->
+<section class="px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Quantum Computing -->
+<article class="bg-surface-container-low group relative flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="quantum computing visualize" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="glowing blue quantum processor architecture with swirling light particles and complex circuitry paths in deep void space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjKUX2O98Zb-mB_y9YfZ28YrwYrQ3MOKjU4eYTKBRuLwvxL42Zq6cKOuA4tsIwtJOoEmzyggIUGuumBEQF3cE-aGdVzcCj_CKsDNuNN6Su-s0sNTsiGDvSMzsuLjwuK-JLOOFRqH9m6BKIpfK-FwEadBIHfisI1H6SVhujIbmk4_BYdnNU6eKiyZb_rCnUgaaiqxKgU0fP4IP2E1ZOjo9Sykgjxotk18vjaghjJ8sWZkJHA5D2l_bP1PwlHoqOE9WR2HTBPdfWV9xo"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur px-3 py-1 text-[10px] font-label text-primary-fixed-dim uppercase tracking-widest border border-primary-fixed-dim/20">Quantum Computing</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-3">May 12, 2024</p>
+<h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-primary-fixed-dim transition-colors">The Silicon Threshold: Post-Quantum Cryptography</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">Navigating the transition to encryption models that survive the era of super-positioning.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">By Leo Vancamp</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">arrow_outward</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Decentralized Protocols -->
+<article class="bg-surface-container-low group relative flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="decentralized protocols" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="abstract digital representation of a mesh network with nodes connected by glowing neon lines against a dark textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHdzrYoMXDPeenFC6oaQhbBaGYgMQcCH0fap6AhjdVTcvX525V-vjaGt6dNfbMDx7m5Vt79QWKHRvcrFBiQsopT9D-ZZw5HhEiDETIfX4t8zFHiUA2Vel2riakV_LPO3GPmd7-l8yucVhl-V_C7qiVCQtGSm6o6jg_qs1mip2U8imq4utDUwoTAJnOroVZf08ajkfmv11adHK-NdvPAjxpU6OXUEiaqDkfGWOrnUVT7RSsqoIBwpfXih9lkzK06PB16zhpqlWXc9Q1"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur px-3 py-1 text-[10px] font-label text-tertiary-fixed-dim uppercase tracking-widest border border-tertiary-fixed-dim/20">Decentralized Protocols</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-3">May 10, 2024</p>
+<h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-primary-fixed-dim transition-colors">Mesh 9: The Autonomous Web Identity</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">Eliminating the central server from the user experience through persistent P2P identity layers.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">By Sarah Chen</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">arrow_outward</span>
+</div>
+</div>
+</article>
+<!-- Card 3: Cyber-Arachnids (Small Scale) -->
+<article class="bg-surface-container-low group relative flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="cybernetic tech" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="extreme close up of a futuristic mechanical insect with glowing teal sensors and carbon fiber plating resting on a metallic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgOGJ9ToeQwkCig0d9aTEkTAwPBUkunJPnQexxQSHvqT5KoWClAIdTzyjYNf5YTHE9YOLVSqoXfPOYkVdolF7JkiYitzYCn5n79gei2xEApKQA3mGuWKlbTosVBOm-XN0mCb8ymk4uJOrflmW7yilRsI96FZG9CzW1iiYZnIz_J2EYDzQndPX8jbhHPkYuHuZuD2qh0ZtgQbdJ3U630bTx3s8JjtXVQKx3tE-wMuGBAVaXvIV_gdb6htkBH45Yo6ElL0GfkvUD8_Sd"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur px-3 py-1 text-[10px] font-label text-primary-fixed-dim uppercase tracking-widest border border-primary-fixed-dim/20">Cyber-Arachnids</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-3">May 08, 2024</p>
+<h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-primary-fixed-dim transition-colors">Swarm Intelligence in Urban Maintenance</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">How self-organizing robotic clusters are fixing infrastructure without human oversight.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">By Marcus J.</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">arrow_outward</span>
+</div>
+</div>
+</article>
+<!-- Wide Card: Large Scale Innovation -->
+<article class="md:col-span-2 bg-surface-container-low group relative flex flex-col lg:flex-row h-full border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="lg:w-1/2 h-full overflow-hidden relative min-h-[300px]">
+<img alt="global network" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="stylized earth view from orbit with glowing data lines crisscrossing the continents in deep blue and neon white hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNVhK9adUVP3x9z-0eakFRZQW8CZo8MZz6Kad9Vm_vPDTXWvQJHfO7PqIGhe5R1lyztEbi1ck8KfY186dyuEROb9yAAnYzjN8E59ANm6UJRxs30Ydzh76wtMfoKxBazACaSPHmW--sWYjHFxWZAyrGkywET4sPBwZQZYm8jtCACadQIUZJkW7-nObF3cJ36EYn72O6CStrS2oaL6W-Y8t2W4_lasc8_2ObVxsYFGzXVN9WJGCe71b0GUYF1m1BXGeZM1XTSAFHiNEj"/>
+</div>
+<div class="lg:w-1/2 p-8 flex flex-col">
+<div class="mb-4 inline-block px-3 py-1 border border-outline-variant/30 text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Global Analysis</div>
+<h3 class="font-headline text-3xl font-bold text-primary mb-4 leading-tight group-hover:text-primary-fixed-dim transition-colors">The Sovereignty of Data: Borders in 2030</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-8">As physical borders blur, the geographical location of data storage becomes the new geopolitical frontline.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-sm bg-primary-fixed-dim/20 flex items-center justify-center font-headline text-[10px] text-primary-fixed-dim font-bold">EK</div>
+<span class="text-[10px] font-label text-on-surface-variant uppercase">Elena Kostic</span>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">arrow_outward</span>
+</div>
+</div>
+</article>
+<!-- Final Single Card -->
+<article class="bg-surface-container-low group relative flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img alt="robotic tech" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="hyper-realistic robotic eye with intricate mechanical iris and glowing red status indicators, soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_3rAT3jhFp2K0DxKV7x7xgxVgSleK9t1rYXiI4EX37dneUOM-3IqW0gZ5RTnrxaoWMyXiPG1fnmCSjpwUJnNMcZ29Ao1MY_z73nRLNE-s4KRY7xM4TSU2nZ-DIOFRUEHi1FXAneGIjCLCfpxTRyYExiYOjvO1VlTQNKxxqS3VOXe8QYC8bopFFNa_tSDqPAYF-Okt1_wCcJYjcS5ZUskBECt0G9p6fdAiki4riXImUJNrWUT7H4pAAR0fayxHoYESc6MN2OsUNDfU"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur px-3 py-1 text-[10px] font-label text-error uppercase tracking-widest border border-error/20">Ethics</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-3">May 05, 2024</p>
+<h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight group-hover:text-primary-fixed-dim transition-colors">The Right to Offline: A Bio-Hacker's Guide</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">Exploring the legal and technical methods for maintaining cognitive privacy in a hyper-connected world.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase">By Jonas Gray</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">arrow_outward</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="mt-20 px-8 max-w-7xl mx-auto">
+<div class="bg-surface-container-high p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed-dim/5 blur-[100px] rounded-full"></div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline text-4xl font-bold text-primary mb-4 tracking-tighter">Stay Wired.</h2>
+<p class="text-on-surface-variant text-lg mb-8">Receive our weekly intelligence briefing on emerging cybernetic trends and decentralized protocols directly to your neural feed (or email).</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="flex-grow bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary-fixed-dim text-primary placeholder:text-on-surface-variant/40 px-6 py-4 font-body" placeholder="communications@address.net" type="email"/>
+<button class="bg-primary-fixed-dim text-on-primary-fixed px-10 py-4 font-headline font-bold uppercase tracking-widest hover:bg-primary transition-colors">Join the Network</button>
+</div>
+<p class="mt-4 text-[10px] font-label text-on-surface-variant/50 uppercase tracking-widest">By joining, you agree to our encrypted data protocols.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#181c22] border-t border-[#3a494a]/20 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+<div>
+<div class="font-['Space_Grotesk'] text-xl font-bold text-[#00f5ff] mb-6">Tekluv</div>
+<p class="font-['Manrope'] text-sm text-[#b9caca] leading-relaxed max-w-xs">
+                    Curating the future of cybernetic existence and technological evolution through rigorous investigation and radical transparency.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<h4 class="font-headline text-xs font-bold text-primary uppercase tracking-widest">Protocol</h4>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline text-xs font-bold text-primary uppercase tracking-widest">Connect</h4>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Contact</a>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Careers</a>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex gap-4 mb-8">
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 hover:border-primary-fixed-dim transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">terminal</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 hover:border-primary-fixed-dim transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 hover:border-primary-fixed-dim transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed-dim">rss_feed</span>
+</a>
+</div>
+<p class="font-['Manrope'] text-sm text-[#b9caca] md:text-right">
+                    © 2024 Tekluv. All rights reserved. Engineered for the future.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

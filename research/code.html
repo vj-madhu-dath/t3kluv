@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Research | Tekluv</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ffb4ab",
+              "error-container": "#93000a",
+              "surface-bright": "#353940",
+              "on-tertiary-fixed-variant": "#005048",
+              "on-secondary-container": "#9cbac1",
+              "surface-tint": "#00daf3",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2d3137",
+              "primary-fixed": "#9cf0ff",
+              "inverse-surface": "#dfe2eb",
+              "surface": "#10141a",
+              "secondary-fixed-dim": "#adccd2",
+              "outline-variant": "#3a494a",
+              "tertiary-fixed-dim": "#46dcc9",
+              "primary-fixed-dim": "#00daf3",
+              "background": "#10141a",
+              "surface-container-lowest": "#0a0e14",
+              "secondary": "#adccd2",
+              "on-surface-variant": "#b9caca",
+              "on-secondary-fixed": "#001f24",
+              "secondary-fixed": "#c9e8ef",
+              "primary": "#f0fcff",
+              "surface-container-low": "#181c22",
+              "tertiary": "#e9fff9",
+              "surface-variant": "#31353c",
+              "inverse-primary": "#006875",
+              "on-tertiary": "#003731",
+              "on-secondary-fixed-variant": "#2e4b51",
+              "on-secondary": "#17353a",
+              "surface-container-highest": "#31353c",
+              "on-tertiary-fixed": "#00201c",
+              "on-error": "#690005",
+              "tertiary-fixed": "#69f9e5",
+              "surface-container": "#1c2026",
+              "on-background": "#dfe2eb",
+              "outline": "#849495",
+              "on-surface": "#dfe2eb",
+              "tertiary-container": "#63f4e0",
+              "on-primary-container": "#006b78",
+              "primary-container": "#84edff",
+              "secondary-container": "#2e4b51",
+              "surface-container-high": "#262a31",
+              "on-tertiary-container": "#006e63",
+              "on-primary": "#00363d",
+              "on-primary-fixed": "#001f24",
+              "surface-dim": "#10141a",
+              "on-primary-fixed-variant": "#004f58"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(28, 32, 38, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(58, 73, 74, 0.2);
+        }
+        .cyber-grid {
+            background-image: linear-gradient(rgba(0, 218, 243, 0.05) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(0, 218, 243, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#10141a]/80 backdrop-blur-xl border-b border-[#3a494a]/20 shadow-[0_0_20px_rgba(0,245,255,0.08)] flex justify-between items-center px-8 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#00f5ff] font-['Space_Grotesk']">Tekluv</div>
+<div class="hidden md:flex space-x-8 font-['Space_Grotesk'] uppercase tracking-widest text-sm">
+<a class="text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Home</a>
+<a class="text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Articles</a>
+<a class="text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Innovations</a>
+<a class="text-[#00f5ff] border-b-2 border-[#00f5ff] pb-1" href="#">Research</a>
+<a class="text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">About</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-[#00f5ff] scale-95 active:scale-90 transition-transform">search</button>
+<button class="bg-[#00daf3] text-[#001f24] font-['Space_Grotesk'] uppercase tracking-widest text-xs px-6 py-2 rounded-lg hover:bg-white transition-all duration-300">Subscribe</button>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<header class="relative px-8 py-20 overflow-hidden">
+<div class="absolute inset-0 cyber-grid opacity-20"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<span class="inline-block py-1 px-3 mb-6 bg-secondary-container text-secondary text-[10px] font-label uppercase tracking-widest border border-outline-variant/30">Archives // System 01</span>
+<h1 class="text-5xl md:text-7xl font-headline font-bold text-primary tracking-tighter leading-none mb-6">
+                            THE RESEARCH <br/><span class="text-primary-fixed-dim italic">REPOSITORY</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
+                            Peer-reviewed meta-analysis of emerging substrate technologies, quantum entanglement protocols, and the bio-digital synthesis of the next decade.
+                        </p>
+</div>
+<div class="flex flex-col items-start md:items-end font-label text-xs uppercase tracking-[0.2em] text-outline">
+<span>Updated: 2024.Q4</span>
+<span>Access: Level 05</span>
+</div>
+</div>
+<!-- Data Strip -->
+<div class="h-[2px] w-full bg-gradient-to-r from-primary-fixed-dim to-transparent mt-12"></div>
+</div>
+</header>
+<!-- Featured Research Bento Grid -->
+<section class="px-8 py-12 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Primary Card: Superconducting Qubits -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low p-8 border-l-4 border-primary-fixed-dim">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<span class="text-primary-fixed-dim font-label text-xs uppercase mb-4 block">Quantum Systems // Paper 402</span>
+<h2 class="text-3xl font-headline font-bold text-on-surface mb-6 leading-tight">Coherence Thresholds in Superconducting Qubits</h2>
+<p class="text-on-surface-variant mb-8 line-clamp-4 leading-relaxed">
+                                An exhaustive study into the flux-insensitive regime of transmon qubits. This analysis provides a blueprint for maintaining quantum state integrity beyond the 10-millisecond barrier using novel niobium-based resonators.
+                            </p>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 bg-primary-fixed-dim text-on-primary-fixed font-label text-xs uppercase tracking-widest hover:brightness-110 transition-all">Download PDF</button>
+<button class="px-5 py-2 glass-panel text-on-surface font-label text-xs uppercase tracking-widest hover:bg-surface-variant transition-all">Abstract</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2 aspect-square relative">
+<img class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 opacity-80 group-hover:opacity-100" data-alt="Intricate blue and teal glowing quantum computer processor with complex circuitry and neon light pulses in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpmZvOsc6MgsCGWncJK9K00g5Om-llvnWjhz17AHSm_rfMfOQYu0LMSaYbnsrZ-0cJYRZr2MQLSCu1_VPwQkaLvauvtqyS2PcRmNbngIGXHMf5ihb-SKF19zfNOHUchSLGxTARGQuMqffC--sHsFZu2ilFNduLLbYOq_6ot1oDkZhFF5SID85Qn7ED8z7OVF8WLckPn56atMwDkv01Ha_gf1rqQjgRYFI-xxOOAfEzYzQs3Oy8Nx7x_To_FCtbeUZSbr-_AYkgj0pl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Vertical Card: Cybernetic Evolution -->
+<div class="md:col-span-4 glass-panel p-6 flex flex-col justify-between group">
+<div>
+<div class="w-full aspect-video mb-6 relative overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="Digital representation of human neural pathways merging with fiber optic cables in a matrix of cyan and black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPpQO6Owvrn6L2G3HM5DbQZQ68iARczkPou0deLxHBUVjoOxazRnxKpVmhYKrzQtfvIal5YK9IJSD07skhm-tOdtQZ4l3apordmxni6APhF1s_5bTQ_7ajovRgsBprp5kYHP1JWof0LgQTzePEwsIUOH_D7w-J2qSc9fOu-0Am9HCQtIBr1E7kRYfU2u1mazRhT8ORw5XKRtYMqfpDLA-hcrWsXTsyPoeeeGYot3nVmo5ZEvvBm4NZslOJAhhJoqXe_MSNRZY0YPLM"/>
+</div>
+<span class="text-tertiary-fixed-dim font-label text-xs uppercase mb-2 block">Bio-Synthesis</span>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-4">Cybernetic Evolution: Post-Biological Cognition</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Projections on the transition from silicon-based interfaces to direct neural-lattice integration by 2035.
+                        </p>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-[10px] font-label text-outline uppercase">98% Peer Score</span>
+<span class="material-symbols-outlined text-primary-fixed-dim">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Small Grid Items -->
+<div class="md:col-span-4 bg-surface-container p-6 border-b-2 border-outline-variant hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<span class="text-xs font-label text-outline-variant mb-2 block">DATASET 012</span>
+<h4 class="text-lg font-headline font-medium text-on-surface">Global Latency Benchmarks for Satellite Mesh Networks</h4>
+</div>
+<div class="md:col-span-4 bg-surface-container p-6 border-b-2 border-outline-variant hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<span class="text-xs font-label text-outline-variant mb-2 block">WHITE PAPER</span>
+<h4 class="text-lg font-headline font-medium text-on-surface">Algorithmic Governance in Decentralized Tech-Stacks</h4>
+</div>
+<div class="md:col-span-4 bg-surface-container p-6 border-b-2 border-outline-variant hover:border-primary-fixed-dim transition-colors cursor-pointer">
+<span class="text-xs font-label text-outline-variant mb-2 block">INTERVIEW</span>
+<h4 class="text-lg font-headline font-medium text-on-surface">Architecting the Void: A Talk with Dr. Elara Thorne</h4>
+</div>
+</div>
+</section>
+<!-- Data Visualization Section -->
+<section class="bg-surface-container-low py-20 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-3xl font-headline font-bold text-primary-fixed-dim mb-4 tracking-tight uppercase">Data Visualizations</h2>
+<p class="text-on-surface-variant max-w-2xl">Visualizing the exponential growth of neural density vs. processing overhead in hybrid systems over the last 24 months.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="relative aspect-square md:aspect-video lg:aspect-square bg-surface-container-lowest glass-panel p-8 flex items-center justify-center overflow-hidden">
+<!-- Abstract Diagram Representation -->
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full cyber-grid"></div>
+</div>
+<div class="relative w-full h-full border border-primary-fixed-dim/20 rounded-full flex items-center justify-center">
+<div class="w-3/4 h-3/4 border border-tertiary-fixed-dim/30 rounded-full flex items-center justify-center border-dashed">
+<div class="w-1/2 h-1/2 bg-primary-fixed-dim/5 rounded-full blur-3xl"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+</div>
+<!-- Simulated Data Points -->
+<div class="absolute top-1/4 right-1/4 w-2 h-2 bg-primary-fixed-dim shadow-[0_0_10px_rgba(0,218,243,1)]"></div>
+<div class="absolute bottom-1/3 left-1/4 w-2 h-2 bg-tertiary-fixed-dim shadow-[0_0_10px_rgba(70,220,201,1)]"></div>
+</div>
+<div class="absolute bottom-4 left-8 right-8 flex justify-between font-label text-[10px] text-outline uppercase tracking-tighter">
+<span>Vector_X // 409.2</span>
+<span>Sigma_Dev // 0.003</span>
+<span>Status // Synchronized</span>
+</div>
+</div>
+<div class="space-y-12">
+<div class="relative">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h5 class="font-headline font-bold text-xl">Synthetic Neuron Reliability</h5>
+<p class="text-sm text-on-surface-variant">Uptime across distributed substrate nodes</p>
+</div>
+<span class="text-2xl font-headline font-bold text-primary-fixed-dim">99.98%</span>
+</div>
+<div class="h-1 w-full bg-surface-variant">
+<div class="h-full bg-primary-fixed-dim w-[99.98%] shadow-[0_0_8px_rgba(0,218,243,0.5)]"></div>
+</div>
+</div>
+<div class="relative">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h5 class="font-headline font-bold text-xl">Qubit Decoherence Delay</h5>
+<p class="text-sm text-on-surface-variant">Increase since V3 integration</p>
+</div>
+<span class="text-2xl font-headline font-bold text-tertiary-fixed-dim">+412ms</span>
+</div>
+<div class="h-1 w-full bg-surface-variant">
+<div class="h-full bg-tertiary-fixed-dim w-[72%] shadow-[0_0_8px_rgba(70,220,201,0.5)]"></div>
+</div>
+</div>
+<div class="p-6 bg-surface-container border-l-2 border-primary-fixed-dim italic text-on-surface-variant text-sm leading-relaxed">
+                            "The data suggests a non-linear correlation between neural density and the emergence of secondary latent structures within the mesh."
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Visual Reference Section -->
+<section class="px-8 py-20 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-5/12">
+<img class="w-full grayscale brightness-75 border border-outline-variant/30" data-alt="Microscopic view of high-tech motherboard circuits with glowing paths of energy and blue aesthetic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnYxyQWfsJ6gqOZElwzVQQXTepL8VfjFGXj5pfO1VoaH_R_IjchCXCWSKCVbMG8dmbYM3w7kHPevmAE76AAJ84nOMQiy_rKURtVrmRPQ--x9bYmSwypXwfwe7QAakgMO2GEwGB6bMwc18djqK8Cf8gTQY4vlAL9sw8FCbTh2miyAN9AAJ4D3POONSPxRckZiN079MmOVhx5RpMQf3cMV9gg84dTf7c5ibMSZ--yc8LuCGVSWMM0sXsluG31-XPc7cMgKD7CuWpM_mP"/>
+</div>
+<div class="w-full md:w-7/12">
+<span class="text-primary-fixed-dim font-label text-xs uppercase tracking-widest mb-6 block">Analysis // Visual Reference {{DATA:IMAGE:IMAGE_3}}</span>
+<h2 class="text-4xl font-headline font-bold text-on-surface mb-8">Structural Analysis of Low-Loss Dielectrics</h2>
+<div class="grid grid-cols-2 gap-8 font-label text-sm uppercase text-outline">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary-fixed-dim"></span>
+<span>Refraction Index</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary-fixed-dim"></span>
+<span>Thermal Conductivity</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-tertiary-fixed-dim"></span>
+<span>Signal Dispersion</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-tertiary-fixed-dim"></span>
+<span>Elastic Modulus</span>
+</div>
+</div>
+</div>
+<p class="mt-12 text-on-surface-variant leading-relaxed">
+                        In accordance with the visual reference, the crystalline structures observed in the latest iteration of dielectric layers show a 40% reduction in surface roughness, significantly mitigating noise in high-frequency signal propagation.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#181c22] border-t border-[#3a494a]/20 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="font-['Space_Grotesk'] text-xl font-bold text-[#00f5ff]">Tekluv</div>
+<p class="font-['Manrope'] text-sm text-[#b9caca] max-w-xs leading-relaxed">
+                    A vanguard for cybernetic insight and the architectural future of human-machine intelligence.
+                </p>
+</div>
+<div class="flex flex-col space-y-3">
+<h6 class="text-primary-fixed-dim font-label text-xs uppercase tracking-widest mb-2">Research Access</h6>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Contact</a>
+<a class="font-['Manrope'] text-sm text-[#b9caca] hover:text-[#00f5ff] transition-colors" href="#">Careers</a>
+</div>
+<div class="space-y-4">
+<h6 class="text-primary-fixed-dim font-label text-xs uppercase tracking-widest mb-2">Newsletter</h6>
+<div class="flex border border-outline-variant/30 overflow-hidden">
+<input class="bg-transparent border-none focus:ring-0 text-xs font-label p-3 w-full" placeholder="ENCRYPTED EMAIL" type="email"/>
+<button class="bg-primary-fixed-dim text-on-primary-fixed px-4 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<p class="font-['Manrope'] text-xs text-[#b9caca]/60">© 2024 Tekluv. All rights reserved. Engineered for the future.</p>
+</div>
+</div>
+</footer>
+</body></html>
