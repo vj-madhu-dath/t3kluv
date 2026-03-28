@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Articles | T3kluv"
+  description="In-depth analysis and digital architecture explorations"
+  currentPath="/articles"
+>
+  <section class="max-w-7xl mx-auto px-8 py-24">
+    <div class="mb-16">
+      <div class="data-strip w-24 mb-6"></div>
+      <h1 class="font-headline text-5xl md:text-6xl font-bold uppercase tracking-tighter text-white mb-6">Articles</h1>
+      <p class="text-on-surface-variant text-xl">In-depth analysis of emerging technologies and digital transformation trends.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <article class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8">
+        <div class="flex items-start justify-between mb-4">
+          <span class="bg-primary-fixed-dim text-on-primary-fixed text-xs font-bold px-3 py-1 uppercase tracking-widest">Featured</span>
+        </div>
+        <h3 class="font-headline text-2xl font-bold text-white mb-4 group-hover:text-primary-fixed-dim transition-colors">Cyber Arachnids & Distributed Surveillance Networks</h3>
+        <p class="text-on-surface-variant mb-6">Exploring the evolution of decentralized surveillance systems and their implications for digital security.</p>
+        <a href="/article-cyber-arachnid.html" class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
+          Read More
+          <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+        </a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

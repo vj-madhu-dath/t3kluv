@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coherence Thresholds in Superconducting Qubits | T3kluv Research</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#1c2026",
+              "on-secondary-fixed-variant": "#2e4b51",
+              "on-tertiary-container": "#006e63",
+              "surface-container-highest": "#31353c",
+              "surface-bright": "#353940",
+              "tertiary-container": "#63f4e0",
+              "surface-container-high": "#262a31",
+              "on-tertiary": "#003731",
+              "on-primary-fixed": "#001f24",
+              "surface-tint": "#00daf3",
+              "surface-dim": "#10141a",
+              "primary-fixed": "#9cf0ff",
+              "primary-container": "#84edff",
+              "surface-container-lowest": "#0a0e14",
+              "on-primary-fixed-variant": "#004f58",
+              "on-surface": "#dfe2eb",
+              "on-tertiary-fixed-variant": "#005048",
+              "tertiary": "#e9fff9",
+              "inverse-surface": "#dfe2eb",
+              "surface": "#10141a",
+              "on-primary": "#00363d",
+              "tertiary-fixed-dim": "#46dcc9",
+              "secondary-fixed": "#c9e8ef",
+              "error": "#ffb4ab",
+              "secondary": "#adccd2",
+              "surface-container-low": "#181c22",
+              "surface-variant": "#31353c",
+              "on-secondary-fixed": "#001f24",
+              "secondary-fixed-dim": "#adccd2",
+              "inverse-primary": "#006875",
+              "outline": "#849495",
+              "on-secondary-container": "#9cbac1",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#00201c",
+              "outline-variant": "#3a494a",
+              "secondary-container": "#2e4b51",
+              "on-background": "#dfe2eb",
+              "inverse-on-surface": "#2d3137",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#00daf3",
+              "on-secondary": "#17353a",
+              "on-primary-container": "#006b78",
+              "background": "#10141a",
+              "primary": "#f0fcff",
+              "tertiary-fixed": "#69f9e5",
+              "on-surface-variant": "#b9caca"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(28, 32, 38, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .data-strip {
+            height: 2px;
+            background: linear-gradient(90deg, #00daf3 0%, #006b78 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #10141a; }
+        ::-webkit-scrollbar-thumb { background: #3a494a; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#10141a]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(0,245,255,0.08)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#00F5FF] uppercase font-['Space_Grotesk']">
+                T3kluv
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#b9caca] hover:text-[#00F5FF] transition-colors" href="/articles.html">Articles</a>
+<a class="text-[#b9caca] hover:text-[#00F5FF] transition-colors" href="/innovations.html">Innovations</a>
+<a class="text-[#00F5FF] border-b-2 border-[#00F5FF] pb-1" href="/research.html">Research</a>
+<a class="text-[#b9caca] hover:text-[#00F5FF] transition-colors" href="/about.html">About</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="hidden lg:block text-[#00F5FF] font-medium border border-[#00F5FF]/30 px-4 py-1.5 hover:bg-[#00F5FF]/10 transition-all duration-300">Subscribe</button>
+<span class="material-symbols-outlined text-[#00F5FF] cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 max-w-screen-xl mx-auto px-6">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-wrap gap-4 mb-6">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-primary-fixed-dim bg-primary-fixed-dim/10 px-3 py-1">Quantum Computing</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant border border-outline-variant/30 px-3 py-1">Whitepaper // 042-X</span>
+</div>
+<h1 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-on-surface leading-tight mb-8">
+                Coherence Thresholds in <br/><span class="text-primary-fixed-dim">Superconducting Qubits</span>
+</h1>
+<div class="data-strip w-32 mb-8"></div>
+<div class="flex flex-col md:flex-row md:items-center gap-8 text-on-surface-variant font-label text-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded-none flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-fixed-dim">account_circle</span>
+</div>
+<div>
+<p class="text-on-surface font-medium">Dr. Aris Thorne</p>
+<p class="text-xs opacity-70">Lead Researcher, T3kluv Cybernetic Dept.</p>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="text-on-surface font-medium">Published</p>
+<p class="text-xs opacity-70">October 14, 2024</p>
+</div>
+<div class="flex flex-col">
+<p class="text-on-surface font-medium">Reading Time</p>
+<p class="text-xs opacity-70">18 Minutes</p>
+</div>
+<div class="ml-auto flex gap-4">
+<button class="p-2 border border-outline-variant/20 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">download</span></button>
+<button class="p-2 border border-outline-variant/20 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">share</span></button>
+</div>
+</div>
+</header>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden lg:block lg:col-span-3 sticky top-32 h-fit">
+<nav class="space-y-6">
+<p class="font-label text-xs uppercase tracking-widest text-outline mb-4">Contents</p>
+<ul class="space-y-4 border-l border-outline-variant/20">
+<li class="pl-4 border-l-2 border-primary-fixed-dim -ml-[1px]"><a class="text-primary-fixed-dim text-sm font-medium" href="#abstract">01. Abstract</a></li>
+<li class="pl-4 hover:border-l-2 hover:border-outline transition-all -ml-[1px]"><a class="text-on-surface-variant hover:text-on-surface text-sm" href="#introduction">02. Introduction</a></li>
+<li class="pl-4 hover:border-l-2 hover:border-outline transition-all -ml-[1px]"><a class="text-on-surface-variant hover:text-on-surface text-sm" href="#methodology">03. Methodology</a></li>
+<li class="pl-4 hover:border-l-2 hover:border-outline transition-all -ml-[1px]"><a class="text-on-surface-variant hover:text-on-surface text-sm" href="#data">04. Empirical Data</a></li>
+<li class="pl-4 hover:border-l-2 hover:border-outline transition-all -ml-[1px]"><a class="text-on-surface-variant hover:text-on-surface text-sm" href="#references">05. References</a></li>
+</ul>
+<div class="mt-12 p-6 bg-surface-container-low border border-outline-variant/10">
+<p class="font-headline font-bold text-primary-fixed-dim text-lg mb-2">Need Insights?</p>
+<p class="text-xs text-on-surface-variant mb-4">Access our full data repository on quantum decoherence patterns.</p>
+<button class="w-full bg-primary-fixed-dim text-on-primary-fixed font-label text-xs font-bold py-3 uppercase tracking-wider hover:opacity-90 transition-opacity">Request API Access</button>
+</div>
+</nav>
+</aside>
+<!-- Paper Body -->
+<div class="lg:col-span-9 space-y-16">
+<!-- Abstract Section -->
+<section class="relative p-8 md:p-12 bg-surface-container-low/50 border-l-4 border-primary-fixed-dim" id="abstract">
+<h2 class="font-headline text-2xl font-bold mb-6 text-primary-fixed-dim">01. Abstract</h2>
+<p class="text-lg leading-relaxed text-on-surface font-light italic">
+                        The challenge of maintaining quantum coherence remains the primary bottleneck in the scalability of superconducting qubits. This paper presents a longitudinal study on coherence thresholds, identifying a critical junction in environmental noise suppression where gate fidelity surpasses the 99.9% fault-tolerance limit. We analyze the impact of sub-Kelvin thermal fluctuations on transmon stability and propose a novel "cryo-buffer" architecture to mitigate decoherence.
+                    </p>
+</section>
+<!-- Introduction Section -->
+<section id="introduction">
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-4">
+<span class="text-primary-fixed-dim/30">02.</span> Introduction
+                    </h2>
+<div class="columns-1 md:columns-2 gap-10 space-y-6 text-on-surface-variant leading-relaxed">
+<p>
+                            In the rapidly evolving landscape of quantum information science, superconducting qubits have emerged as a leading platform due to their manufacturability and high connectivity. However, the inherent fragility of these macroscopic quantum states necessitates rigorous isolation from the external environment.
+                        </p>
+<p>
+                            The phenomenon of decoherence—the loss of quantum information due to interaction with environmental degrees of freedom—represents a fundamental limit. Traditional approaches have focused on material purity and shielding, yet the transition from laboratory prototypes to fault-tolerant processors requires a deeper understanding of the statistical thresholds where coherence becomes stable enough for error correction.
+                        </p>
+<img alt="Quantum Processor" class="w-full grayscale hover:grayscale-0 transition-all duration-700 mb-6 border border-outline-variant/20" data-alt="abstract close-up of a golden quantum computer processor with complex wiring and shimmering metallic surfaces in a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRZuacnKyUxfsFR1QyfrdJGDuDMvNv5Ehb4ckPxgvhJK8TpliK2SIL_Cpi-JCmBHDiv2xBe_MPlwQjOJfHdgmOs00sMqJVgCnjWW_1AxDw9PbdM5H90UoVN8WDddGBtMXHAHQkmhX1IkCaXfca-RyKvlRMhEyD8gtkVdBLb6p7CdirJ60XOk8AAfRnkl-myZYf8mpctp968bOwoKMj3DQ6HwnV4iiqb_UhE0tZ4ri2zZn9tK8EGAhJmTq48BkQQaPfhVO2_pyoRgdZ"/>
+<p>
+                            This research investigates the "phase-slip" regime in Josephson junctions, examining how varying architectural topologies influence the lifetime (T1) and dephasing time (T2) of the qubit.
+                        </p>
+</div>
+</section>
+<!-- Methodology Section (Bento Style) -->
+<section id="methodology">
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-4">
+<span class="text-primary-fixed-dim/30">03.</span> Methodology
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container p-8 border border-outline-variant/10 hover:border-primary-fixed-dim/30 transition-all">
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4" style="font-size: 32px;">biotech</span>
+<h3 class="font-headline text-xl font-bold mb-3">Sub-mK Stabilization</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                Our experimental setup utilized a custom dilution refrigerator capable of maintaining a base temperature of 7.2mK. Qubits were mounted on a vibration-isolated oxygen-free high-conductivity (OFHC) copper stage to minimize phonon-induced dephasing.
+                            </p>
+</div>
+<div class="bg-surface-container-high p-8 border border-outline-variant/10">
+<h3 class="font-headline text-xl font-bold mb-3">Array Specs</h3>
+<ul class="space-y-3 font-label text-xs">
+<li class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant">Qubit Type</span>
+<span class="text-primary-fixed-dim">Fixed-freq Transmon</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-on-surface-variant">Readout Res.</span>
+<span class="text-primary-fixed-dim">6.5 - 7.2 GHz</span>
+</li>
+<li class="flex justify-between">
+<span class="text-on-surface-variant">Gate Fidelity</span>
+<span class="text-primary-fixed-dim">99.982%</span>
+</li>
+</ul>
+</div>
+<div class="md:col-span-3 bg-surface-container-low border border-outline-variant/20 overflow-hidden relative group">
+<div class="p-8 md:w-1/2 relative z-10">
+<h3 class="font-headline text-xl font-bold mb-3">Cryogenic Shielding</h3>
+<p class="text-on-surface-variant text-sm">
+                                    A multi-layer Mu-metal shield was employed to reduce the ambient magnetic field to below 1µG, suppressing the flux-noise power spectral density by several orders of magnitude compared to standard industrial enclosures.
+                                </p>
+</div>
+<div class="absolute inset-0 md:left-1/2 opacity-30 group-hover:opacity-50 transition-opacity">
+<img alt="Circuit Board" class="h-full w-full object-cover" data-alt="microscopic view of high-tech integrated circuit with glowing light trails and neon blue highlights on dark substrate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3oCIQWhqkTi-28TyJ9qqn7XIQw6tfjU22rN114QTQCwTd7iPsyRgd0EJpo2m7ejOqlferZc1hxPzN9ZxjI9-Pi03Cb6OZapyCOuss3kXBnwdUmEUhyAoR2HhRkonl5F7cdaqfvNSWdrCCGQYeNwQaN-dvQNgWOUkwZ8SSVxn4VWcxQeGAT6giFkd2e9t2_qcU0YQUdN1oFekergFAY7Y3rRK733uYCLF7Wmin3OKm-qIa8lc0Or2pIyhxqSYae1bp0dxE-nJ0VcBi"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Data Section (Charts) -->
+<section id="data">
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-4">
+<span class="text-primary-fixed-dim/30">04.</span> Empirical Data
+                    </h2>
+<div class="bg-surface-container-lowest border border-outline-variant/20 p-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+<div>
+<h3 class="font-headline text-lg font-bold">Coherence Decay Analysis</h3>
+<p class="text-xs text-on-surface-variant font-label">Fig. 4.1: T1 Lifetime vs. Temperature (mK)</p>
+</div>
+<div class="flex gap-4 mt-4 md:mt-0">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-primary-fixed-dim"></div>
+<span class="text-[10px] uppercase font-label">Raw Data</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-tertiary-fixed-dim"></div>
+<span class="text-[10px] uppercase font-label">Predicted</span>
+</div>
+</div>
+</div>
+<!-- Simulated Chart -->
+<div class="h-64 flex items-end gap-2 border-b border-l border-outline-variant/30 pb-2 pl-2">
+<div class="flex-1 bg-surface-container-highest group relative h-[20%] hover:bg-primary-fixed-dim transition-colors">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 font-label">12µs</div>
+</div>
+<div class="flex-1 bg-surface-container-highest group relative h-[35%] hover:bg-primary-fixed-dim transition-colors"></div>
+<div class="flex-1 bg-surface-container-highest group relative h-[45%] hover:bg-primary-fixed-dim transition-colors"></div>
+<div class="flex-1 bg-surface-container-highest group relative h-[65%] hover:bg-primary-fixed-dim transition-colors"></div>
+<div class="flex-1 bg-surface-container-highest group relative h-[85%] hover:bg-primary-fixed-dim transition-colors">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 font-label">142µs</div>
+</div>
+<div class="flex-1 bg-primary-fixed-dim/50 group relative h-[95%] hover:bg-primary-fixed-dim transition-colors"></div>
+<div class="flex-1 bg-primary-fixed-dim group relative h-[100%]">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary-fixed-dim text-on-primary-fixed px-2 py-1 text-[10px] font-bold whitespace-nowrap">THRESHOLD REACHED</div>
+</div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-label text-on-surface-variant uppercase tracking-widest px-2">
+<span>100mK</span>
+<span>80mK</span>
+<span>60mK</span>
+<span>40mK</span>
+<span>20mK</span>
+<span>10mK</span>
+<span class="text-primary-fixed-dim">7.2mK</span>
+</div>
+</div>
+</section>
+<!-- References Section -->
+<section id="references">
+<h2 class="font-headline text-2xl font-bold mb-8 flex items-center gap-4">
+<span class="text-primary-fixed-dim/30">05.</span> References
+                    </h2>
+<div class="space-y-6 text-sm text-on-surface-variant font-body">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 border-b border-outline-variant/10 pb-6">
+<span class="md:col-span-1 font-label text-primary-fixed-dim">[01]</span>
+<p class="md:col-span-11 italic">Nakamura, Y. et al. "Coherent control of macroscopic quantum states in a single-Cooper-pair box." Nature 398, 786–788 (1999).</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 border-b border-outline-variant/10 pb-6">
+<span class="md:col-span-1 font-label text-primary-fixed-dim">[02]</span>
+<p class="md:col-span-11 italic">Devoret, M. H. &amp; Schoelkopf, R. J. "Superconducting Circuits for Quantum Information: An Outlook." Science 339, 1169–1174 (2013).</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 border-b border-outline-variant/10 pb-6">
+<span class="md:col-span-1 font-label text-primary-fixed-dim">[03]</span>
+<p class="md:col-span-11 italic">Martinis, J. M. et al. "Superconducting qubit decoherence from optical transitions." Physical Review Letters (2021).</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 border-t border-[#3a494a]/20 bg-[#10141a]">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col space-y-4">
+<div class="font-['Space_Grotesk'] font-bold text-[#00F5FF] text-xl">T3kluv</div>
+<p class="font-['Manrope'] text-sm text-[#b9caca] max-w-sm">
+                    Advancing human-digital symbiosis through rigorous research and cybernetic editorial excellence.
+                </p>
+<p class="font-['Manrope'] text-sm text-[#b9caca] mt-8">
+                    © 2024 T3kluv Cybernetic Editorial. All rights reserved.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+</div>
+</div>
+</footer>
+</body></html>

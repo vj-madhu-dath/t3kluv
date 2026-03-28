@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Emergence of Cyber-Arachnid Surveillance | T3kluv</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#1c2026",
+              "on-secondary-fixed-variant": "#2e4b51",
+              "on-tertiary-container": "#006e63",
+              "surface-container-highest": "#31353c",
+              "surface-bright": "#353940",
+              "tertiary-container": "#63f4e0",
+              "surface-container-high": "#262a31",
+              "on-tertiary": "#003731",
+              "on-primary-fixed": "#001f24",
+              "surface-tint": "#006b78", /* Adjusted for glow opacity */
+              "surface-dim": "#10141a",
+              "primary-fixed": "#9cf0ff",
+              "primary-container": "#84edff",
+              "surface-container-lowest": "#0a0e14",
+              "on-primary-fixed-variant": "#004f58",
+              "on-surface": "#dfe2eb",
+              "on-tertiary-fixed-variant": "#005048",
+              "tertiary": "#e9fff9",
+              "inverse-surface": "#dfe2eb",
+              "surface": "#10141a",
+              "on-primary": "#00363d",
+              "tertiary-fixed-dim": "#46dcc9",
+              "secondary-fixed": "#c9e8ef",
+              "error": "#ffb4ab",
+              "secondary": "#adccd2",
+              "surface-container-low": "#181c22",
+              "surface-variant": "#31353c",
+              "on-secondary-fixed": "#001f24",
+              "secondary-fixed-dim": "#adccd2",
+              "inverse-primary": "#006875",
+              "outline": "#849495",
+              "on-secondary-container": "#9cbac1",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#00201c",
+              "outline-variant": "#3a494a",
+              "secondary-container": "#2e4b51",
+              "on-background": "#dfe2eb",
+              "inverse-on-surface": "#2d3137",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#00daf3",
+              "on-secondary": "#17353a",
+              "on-primary-container": "#006b78",
+              "background": "#10141a",
+              "primary": "#f0fcff",
+              "tertiary-fixed": "#69f9e5",
+              "on-surface-variant": "#b9caca"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(16, 20, 26, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .data-strip {
+            height: 2px;
+            background: linear-gradient(90deg, #00daf3, #006b78);
+        }
+        .glow-subtle {
+            box-shadow: 0 0 24px rgba(0, 218, 243, 0.08);
+        }
+        body {
+            background-color: #10141a;
+            color: #dfe2eb;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#10141a]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(0,245,255,0.08)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#00F5FF] uppercase font-['Space_Grotesk']">
+                T3kluv
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#00F5FF] border-b-2 border-[#00F5FF] pb-1" href="/articles.html">Articles</a>
+<a class="text-[#b9caca] hover:text-[#00F5FF] transition-colors" href="/innovations.html">Innovations</a>
+<a class="text-[#b9caca] hover:text-[#00F5FF] transition-colors" href="/research.html">Research</a>
+<a class="text-[#b9caca] hover:text-[#00F5FF] transition-colors" href="/about.html">About</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block px-5 py-2 bg-primary-fixed-dim text-on-primary-fixed font-label font-bold text-sm tracking-widest uppercase transition-all duration-300 hover:brightness-110 glow-subtle">
+                    Subscribe
+                </button>
+<button class="p-2 text-on-surface-variant hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<header class="relative w-full h-[870px] overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent z-10"></div>
+<img alt="Cybernetic Spider Drone" class="w-full h-full object-cover grayscale brightness-75" data-alt="Futuristic cybernetic spider drone with neon cyan glowing optical sensors climbing a dark metallic wall in a rainy high-tech metropolis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiJXIyp2t0MHXOkvA7ZqCS_IkjKUsJNZ-PA8RYxRiZZZWSxXv-AWYgMI56hjcnGi81P38SsMUsKAON_RE3N4rNKUoqH9w2uu1aEHqFqzt70Z_AyPdodo7DXniCfnny1WxWIptCTpk5y4QjYeNPEJqR3jgd1X1MMD1s_AtubJEe9G6IZ6r-OahwEqUbHVx6YjFEfWhaRtm8BjsYWfcBGWonZOKTftrcQLk1LGFKwi7MS0_WhdYYAhvfG5a1_ecuYIrFqlC5gktsxVAR"/>
+<div class="absolute bottom-0 left-0 w-full z-20 px-6 pb-16 md:pb-24 max-w-7xl mx-auto right-0">
+<div class="inline-block px-3 py-1 bg-primary-fixed-dim/10 border border-primary-fixed-dim/30 text-primary-fixed-dim font-label text-xs tracking-widest uppercase mb-6">
+                    Research Archive // 04.22.24
+                </div>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-primary leading-[0.9] tracking-tighter mb-8 max-w-5xl">
+                    The Emergence of Cyber-Arachnid Surveillance
+                </h1>
+<div class="data-strip mb-8 w-1/4"></div>
+<div class="flex flex-wrap items-center gap-6 text-on-surface-variant font-label text-sm uppercase tracking-widest">
+<div class="flex items-center gap-2">
+<span class="w-8 h-[1px] bg-outline-variant"></span>
+<span>By Elias Vance</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>12 Min Read</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Article Content -->
+<section class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Sidebar / Metadata -->
+<aside class="hidden lg:block lg:col-span-3 space-y-12">
+<div class="sticky top-32 space-y-12">
+<div class="space-y-4">
+<h4 class="font-headline text-xs font-bold text-primary-fixed-dim tracking-[0.2em] uppercase">Executive Summary</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            A deep dive into the integration of bio-mimetic robotics and decentralized neural networks for urban intelligence gathering.
+                        </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-xs font-bold text-primary-fixed-dim tracking-[0.2em] uppercase">Key Subjects</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-low text-[10px] text-on-surface tracking-tighter border border-outline-variant/20">BIO-TECH</span>
+<span class="px-3 py-1 bg-surface-container-low text-[10px] text-on-surface tracking-tighter border border-outline-variant/20">NEURAL NETS</span>
+<span class="px-3 py-1 bg-surface-container-low text-[10px] text-on-surface tracking-tighter border border-outline-variant/20">SURVEILLANCE</span>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/20">
+<div class="flex gap-4">
+<button class="p-2 bg-surface-container hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">share</span></button>
+<button class="p-2 bg-surface-container hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">bookmark</span></button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Text -->
+<article class="lg:col-span-6 space-y-10">
+<p class="text-xl md:text-2xl font-light text-on-surface leading-relaxed first-letter:text-6xl first-letter:font-headline first-letter:font-bold first-letter:text-primary-fixed-dim first-letter:mr-3 first-letter:float-left">
+                    In the shadowed corners of the Neo-Seoul industrial sector, a new form of observation has taken root. It does not look like a camera, nor does it hum with the familiar static of a drone. It moves with a terrifying, fluid grace—eight articulated limbs navigating the vertical labyrinth of the city with absolute silence.
+                </p>
+<h2 class="font-headline text-3xl font-bold text-primary pt-6">The Architecture of Silence</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    Traditional surveillance is static. Even the most advanced satellite imagery or high-altitude UAVs are limited by line-of-sight and environmental interference. The cyber-arachnid, however, utilizes "Sub-Surface Navigation"—a technique where sensors integrated into the chassis read vibration patterns through structural steel and concrete.
+                </p>
+<div class="my-16 relative aspect-video bg-surface-container-low overflow-hidden group">
+<img alt="Micro-Circuitry Detail" class="w-full h-full object-cover opacity-60 grayscale group-hover:scale-105 transition-transform duration-700" data-alt="Extreme close-up of complex green and gold circuit boards with glowing cyan fiber optic filaments and microscopic mechanical joints" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhvyWW1uhsfRHB8Ym6KegxougdF_bE2zknO-RmRV6TYgqcSc_TSv6tAf08SqQlZLyTEn5h3GHhEzVG56lKgFE4g6PxQK8rGMk0HZtNBADIMHHRj0oK4R_VQQc0tj87KzNUrRO_15-4MuCDqiGpi5Yv50oMgZcuwuFoICEQcg5ewb-vhcK-TjRkpnFjNrw4SHa4Gv5sGd8KWKBp6XM2RbcgJy3MrlopjTUUVKAjTlIKKKHya0Mb749jtUMk1p3lFPbiCrT3kiIos8O-"/>
+<div class="absolute bottom-4 left-4 font-label text-[10px] uppercase tracking-widest text-primary-fixed-dim bg-surface/80 backdrop-blur-md px-2 py-1">
+                        Fig 1.2: Integrated Neural Processing Core
+                    </div>
+</div>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    What makes these units particularly formidable is their decentralized intelligence. Unlike a standard remote-piloted craft, these units function as a "Swarm Mind." Data gathered by a single unit in a ventilation shaft is processed across the entire local network, allowing for real-time triangulation of subjects without a centralized server that could be intercepted.
+                </p>
+<blockquote class="border-l-4 border-primary-fixed-dim pl-8 py-4 my-12 bg-surface-container-lowest/50 italic">
+<p class="text-2xl font-headline font-medium text-primary leading-snug">
+                        "We aren't just building robots; we are engineering an ecosystem that watches itself."
+                    </p>
+<cite class="block mt-4 text-xs font-label uppercase tracking-widest text-on-secondary-container">— Dr. Aris Thorne, Lead Architect</cite>
+</blockquote>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    The ethical implications are, predictably, being ignored by the private security conglomerates funding the research. When the observer is indistinguishable from the environment, the concept of a "private space" effectively dissolves into a digital void.
+                </p>
+</article>
+<!-- Right Column - Recommended -->
+<aside class="lg:col-span-3 space-y-12">
+<h4 class="font-headline text-xs font-bold text-primary-fixed-dim tracking-[0.2em] uppercase mb-6">Related Transmission</h4>
+<div class="space-y-8">
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container-low mb-3 overflow-hidden">
+<img alt="Related Tech" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-110 transition-transform duration-500" data-alt="Abstract macro shot of glowing blue server lights in a dark data center with shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM4rW26eOehaIT0ewd_8HzD2L65TECxtfIxwy4mIiGqnJYEv31kbsIIEsvGr_Qpqem6UbSXDBKaOrrvhgUxlHttsdkrH3V1ej0qqOd8GDi0mNicTSGUkbzs5fMkH5EMxA56HCG2zHrrvZiS64edQQVN4JGqW49KndNfQpTbksplxSyu-so_JJ1Bqwo0LlpGN-s_cXu0R2mzLT2aei23-Z71mlgUlpEJVTwS0uoerWFEYetzjAQHplZ2Fptfe7GkS3I04IghxabNoeg"/>
+</div>
+<h5 class="font-headline text-sm font-bold text-on-surface group-hover:text-primary-fixed-dim transition-colors leading-tight">Post-Human Privacy: The End of the Anonymous City</h5>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container-low mb-3 overflow-hidden">
+<img alt="Related Cyber" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-110 transition-transform duration-500" data-alt="Digital representation of a neural network with glowing interconnected nodes and data streams in a dark vacuum" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbmBR07nPDg4wmQvnrwIZK6pio-zbPaOWuF7jxqzO3mpmwOICmy_93BU80iXI9IC3wymRPlQ8kmhbThJ1DebBQ_Nh0XuSzAk-ulknauG59dqvEytk4g9U_J_Hr4-B6VRp4ikuAC1YJzTlHQbbXBAbP44LfzXOKnKtwrQissqmBPceqEvdfr1wgMokAim1FHz3oyw6-6RB4ecv2wu8id56DgF1AIGRC_gSvC-5h_jnErXA-Vj_eztIscFEnEyxSEEehXbwwW9bLywOa"/>
+</div>
+<h5 class="font-headline text-sm font-bold text-on-surface group-hover:text-primary-fixed-dim transition-colors leading-tight">Quantum Encryption vs. Swarm Intelligence</h5>
+</div>
+</div>
+</aside>
+</section>
+<!-- Comments Section -->
+<section class="bg-surface-container-low py-24 border-t border-outline-variant/10">
+<div class="max-w-4xl mx-auto px-6">
+<div class="flex items-center justify-between mb-12">
+<h3 class="font-headline text-2xl font-bold text-primary tracking-tight uppercase">Public Feedback Loop</h3>
+<span class="font-label text-xs text-on-surface-variant uppercase tracking-widest">14 Active Threads</span>
+</div>
+<div class="space-y-12">
+<!-- Comment Input -->
+<div class="bg-surface-container-lowest p-6 border-b-2 border-primary-fixed-dim/30">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant/40 font-body py-4 h-32" placeholder="Enter transmission..."></textarea>
+<div class="flex justify-between items-center mt-4">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary-fixed-dim">attach_file</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary-fixed-dim">tag</span>
+</div>
+<button class="px-8 py-2 bg-primary-fixed-dim text-on-primary-fixed font-label font-bold text-xs tracking-widest uppercase">Post Transmission</button>
+</div>
+</div>
+<!-- Existing Comments -->
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="w-12 h-12 bg-primary-fixed-dim/10 border border-primary-fixed-dim/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-fixed-dim">robot_2</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="font-headline text-sm font-bold text-primary">User_9921</span>
+<span class="text-[10px] text-on-surface-variant font-label uppercase">2 Hours Ago</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">The article fails to mention the power consumption of these units. For a swarm to be truly effective, the energy harvesting tech would need to be generational leaps ahead of where we are.</p>
+<div class="flex gap-4 pt-2">
+<button class="flex items-center gap-1 text-[10px] font-label text-on-surface-variant hover:text-primary-fixed-dim"><span class="material-symbols-outlined text-xs">thumb_up</span> 12</button>
+<button class="flex items-center gap-1 text-[10px] font-label text-on-surface-variant hover:text-primary-fixed-dim"><span class="material-symbols-outlined text-xs">reply</span> Reply</button>
+</div>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="font-headline text-sm font-bold text-primary">Kael.Void</span>
+<span class="text-[10px] text-on-surface-variant font-label uppercase">5 Hours Ago</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">Spotted one of these in the North Docks last night. Or maybe it was just a regular spider. That's the problem, isn't it?</p>
+<div class="flex gap-4 pt-2">
+<button class="flex items-center gap-1 text-[10px] font-label text-on-surface-variant hover:text-primary-fixed-dim"><span class="material-symbols-outlined text-xs">thumb_up</span> 45</button>
+<button class="flex items-center gap-1 text-[10px] font-label text-on-surface-variant hover:text-primary-fixed-dim"><span class="material-symbols-outlined text-xs">reply</span> Reply</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 border-t border-[#3a494a]/20 bg-[#10141a]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-2xl mx-auto">
+<div>
+<div class="font-['Space_Grotesk'] font-bold text-[#00F5FF] text-xl mb-4 uppercase tracking-tighter">T3kluv</div>
+<p class="font-['Manrope'] text-sm text-[#b9caca] max-w-md">
+                    Archiving the evolution of human and synthetic integration through rigorous editorial and field research.
+                </p>
+<div class="mt-8 font-['Manrope'] text-sm text-[#b9caca] opacity-60">
+                    © 2024 T3kluv Cybernetic Editorial. All rights reserved.
+                </div>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-4 md:justify-end items-start">
+</div>
+</div>
+</footer>
+</body></html>

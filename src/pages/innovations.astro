@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Innovations | T3kluv"
+  description="Hardware reveals and software breakthroughs"
+  currentPath="/innovations"
+>
+  <section class="max-w-7xl mx-auto px-8 py-24">
+    <div class="mb-16">
+      <div class="data-strip w-24 mb-6"></div>
+      <h1 class="font-headline text-5xl md:text-6xl font-bold uppercase tracking-tighter text-white mb-6">Innovations</h1>
+      <p class="text-on-surface-variant text-xl">Hardware reveals and software breakthroughs that redefine current technological limits.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <article class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8">
+        <span class="bg-primary-fixed-dim text-on-primary-fixed text-xs font-bold px-3 py-1 uppercase tracking-widest">Neural Interface</span>
+        <h3 class="font-headline text-2xl font-bold text-white mb-4 mt-4 group-hover:text-primary-fixed-dim transition-colors">Neural Interfacing: Direct Brain-Machine Synthesis</h3>
+        <p class="text-on-surface-variant mb-6">The latest breakthroughs in non-invasive neural interfacing technology.</p>
+        <a href="/innovation-neural-interfacing.html" class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
+          Learn More
+          <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+        </a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
