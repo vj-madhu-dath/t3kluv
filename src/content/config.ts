@@ -3,6 +3,7 @@ import { defineCollection, z } from 'astro:content';
 const articles = defineCollection({
   type: 'content',
   schema: z.object({
+    featured: z.boolean().optional(),
     title: z.string(),
     description: z.string(),
     author: z.string(),
@@ -18,9 +19,10 @@ const articles = defineCollection({
   }),
 });
 
-const innovations = defineCollection({
+const news = defineCollection({
   type: 'content',
   schema: z.object({
+    featured: z.boolean().optional(),
     title: z.string(),
     description: z.string(),
     projectName: z.string(),
@@ -46,6 +48,7 @@ const innovations = defineCollection({
 const research = defineCollection({
   type: 'content',
   schema: z.object({
+    featured: z.boolean().optional(),
     title: z.string(),
     shortTitle: z.string(),
     description: z.string(),
@@ -76,6 +79,6 @@ const research = defineCollection({
 
 export const collections = {
   articles,
-  innovations,
+  news,
   research,
 };

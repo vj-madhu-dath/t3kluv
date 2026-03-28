@@ -3,21 +3,22 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  const innovations = await getCollection('innovations');
-  return innovations.map((entry) => ({
+  const news = await getCollection('news');
+  return news.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 const { title, description, projectName, highlight, heroImage, heroImageAlt, specs, diagramImage, diagramImageAlt, timelineEvents } = entry.data;
 ---
 
 <BaseLayout
   title={`${title} | T3kluv`}
   description={description}
-  currentPath="/innovations"
+  currentPath="/news"
 >
   <!-- Hero Section -->
   <section class="max-w-screen-2xl mx-auto px-6 mb-16 pt-12">

@@ -2,24 +2,24 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const innovations = await getCollection('innovations');
+const news = await getCollection('news');
 ---
 
 <BaseLayout
-  title="Innovations | T3kluv"
-  description="Hardware reveals and software breakthroughs"
-  currentPath="/innovations"
+  title="News | T3kluv"
+  description="Industry News"
+  currentPath="/news"
 >
   <section class="max-w-7xl mx-auto px-8 py-24">
     <div class="mb-16">
       <div class="data-strip w-24 mb-6"></div>
-      <h1 class="font-headline text-5xl md:text-6xl font-bold uppercase tracking-tighter text-white mb-6">Innovations</h1>
-      <p class="text-on-surface-variant text-xl">Hardware reveals and software breakthroughs that redefine current technological limits.</p>
+      <h1 class="font-headline text-5xl md:text-6xl font-bold uppercase tracking-tighter text-white mb-6">News</h1>
+      <p class="text-on-surface-variant text-xl">What, Who, and When of Tech Industry</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {innovations.map((innovation) => (
-        <a href={`/innovations/${innovation.slug}`} class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8 block">
+      {news.map((innovation) => (
+        <a href={`/news/${innovation.slug}`} class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8 block">
           <article>
             <span class="bg-primary-fixed-dim text-on-primary-fixed text-xs font-bold px-3 py-1 uppercase tracking-widest">{innovation.data.projectName.split(':')[1]?.trim() || 'Innovation'}</span>
             <h3 class="font-headline text-2xl font-bold text-white mb-4 mt-4 group-hover:text-primary-fixed-dim transition-colors">{innovation.data.title}: {innovation.data.description}</h3>

@@ -1,19 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const featuredArticles = (await getCollection('articles')).filter(item => item.data.featured);
+const featuredNews = (await getCollection('news')).filter(item => item.data.featured);
+const featuredResearch = (await getCollection('research')).filter(item => item.data.featured);
+
 ---
 
 <BaseLayout
   title="T3kluv | Digital Architectures"
-  description="Discover the future of digital architecture and innovations. Archiving the next era of cybernetic evolution."
+  description="Discover the future of digital architecture and news. Archiving the next era of cybernetic evolution."
   currentPath="/"
 >
   <!-- Hero Section -->
-  <section class="relative min-h-[921px] flex items-center overflow-hidden px-8">
+  <section class="relative min-h-[400px] flex items-center overflow-hidden px-8">
     <div class="absolute inset-0 z-0">
       <img
         alt="T3kluv Hero Background"
         class="w-full h-full object-cover hover:grayscale-0 transition-all duration-1000 scale-105"
-        src="https://lh3.googleusercontent.com/aida/ADBb0ugzr-GJrqC5SVkPq_49PA_vTLToLLDuD28i-YRkI0RB7-j9kcOdq9Pz6I79tUBMtRESMYtsq4gbYLx5MeUMW38Z2roYvEbzH1O7nwH3ntNy9BBXp-tnXsvA2G5_fE1X4Z9Z0YtHGthJzCjIgg2vkW3jvnkvClxqDP2opNIvRDnwtQ0A0OeXB52Hn3weEtZ10Qs_BW4t_b_Bo1qoqQ8RNLLecUU4GDPdmkUkIjZxdByvtTSkJqdmf9p1dBXYSaGFBkEzGedU5FXJyDU"
+        src="https://scontent.fcok9-1.fna.fbcdn.net/v/t39.30808-6/598016573_25269303466059189_4636719220809475216_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=2a1932&_nc_ohc=NO9H9w2zjJoQ7kNvwHEg5Dl&_nc_oc=AdqeoTswfJifCDarlUvC_KMQ4fBwH8kG7Xg7DhO1dUczJJL6BxlMKOexzh-ulWff5SQ&_nc_zt=23&_nc_ht=scontent.fcok9-1.fna&_nc_gid=GDIHXwK8JFwn8oDjP4HJCg&_nc_ss=7a32e&oh=00_AfxwLM91PcokoK7MCX4PZeC-REQGwwNFGI-dQkFc11yg2w&oe=69CD3EB7"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
     </div>
@@ -27,23 +33,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           T3kluv
         </h1>
         <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
-          Discover the future of <span class="text-primary-fixed-dim font-semibold italic">digital architecture</span> and innovations. Archiving the next era of cybernetic evolution.
+          Discover the future of <span class="text-primary-fixed-dim font-semibold italic">digital architecture</span> and news. Archiving the next era of cybernetic evolution.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <button class="bg-primary-fixed-dim text-on-primary-fixed px-8 py-4 font-headline font-bold uppercase tracking-wider flex items-center justify-center gap-3 group hover:brightness-110 transition-all">
-            Professional Dashboard
-            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward_ios</span>
-          </button>
-          <button class="bg-surface-container-highest/20 border border-outline-variant/30 backdrop-blur-md text-white px-8 py-4 font-headline font-bold uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-surface-container-highest/40 transition-all">
-            View Research
-          </button>
-        </div>
+        
       </div>
     </div>
   </section>
 
   <!-- Featured Intelligence Section -->
-  <section class="max-w-7xl mx-auto px-8 py-24">
+  <section class="max-w-7xl mx-auto px-8 py-1">
     <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
       <div>
         <div class="data-strip w-24 mb-6"></div>
@@ -51,51 +49,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <!-- Cyber Arachnids Feature -->
-      <a href="/article-cyber-arachnid.html" class="md:col-span-8 group relative overflow-hidden bg-surface-container min-h-[450px] cursor-pointer block">
-        <img
-          alt="Cyber Arachnids"
-          class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUG_KC-kZENjNyn01Wd6GDnYL_4xnhOm_mJEx6k7fQdJUcryEV6didpOAUSGUQ2yMuMPX_oCROovcdoJI-0sWJFs3KyStvQP8GB6IASwwkL5GGT5Hej76M6D6wpCRJrV4kPa1vNDM1hW-MakzQu8if4teKwwJzwHYBEabJbM2sCeaE1caqrlGHeKJC2uduRgSYeJ2WFMEgZUUzxpzJ80yhiuhawfxr9B0LOOMUQflb-zHKBMNOFYnqUGrat2Nj1u0PoJ-rRcOHnDRF"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
-        <div class="absolute bottom-0 left-0 p-10 w-full">
-          <span class="bg-primary-fixed-dim text-on-primary-fixed text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest mb-4 inline-block">Surveillance</span>
-          <h3 class="font-headline text-3xl font-bold text-white uppercase tracking-tighter mb-2">Cyber Arachnids</h3>
-          <p class="text-on-surface-variant line-clamp-2">Distributed surveillance networks that evolve like digital organisms.</p>
-        </div>
-      </a>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      {featuredArticles.length > 0 && (
+        <a href={`/articles/${featuredArticles[0].slug}/`} class="md:col-span-8 group relative overflow-hidden bg-surface-container min-h-[450px] cursor-pointer block">
+          <img
+            alt={featuredArticles[0].data.title}
+            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
+            src={featuredArticles[0].data.heroImage}
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-10 w-full">
+            <span class="bg-primary-fixed-dim text-on-primary-fixed text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest mb-4 inline-block">Article</span>
+            <h3 class="font-headline text-3xl font-bold text-white uppercase tracking-tighter mb-2">{featuredArticles[0].data.title}</h3>
+            <p class="text-on-surface-variant line-clamp-2">{featuredArticles[0].data.description}</p>
+          </div>
+        </a>
+      )}
 
-      <!-- Right Column -->
       <div class="md:col-span-4 flex flex-col gap-6">
-        <!-- Quantum Computing -->
-        <a href="/research-superconducting-qubits.html" class="group relative overflow-hidden bg-surface-container min-h-[216px] cursor-pointer block">
-          <img
-            alt="Superconducting Qubits Research"
-            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhJm0p0q4_rXIFrXXVnAk6hZMEIkL-gPKfDKFfWLKVXWqBuP3nZzXLBQJCLqKZkKgV4gU3bFgBonjvQW50PN5ScSLaPVPNyxvg9BwBFzJdVPZQX9xf1Xqn6QjFvPNR3FMKqPYjXxHRfVXuMGdOyXw"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6 w-full">
-            <span class="bg-on-tertiary-fixed text-surface text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest mb-2 inline-block">Quantum</span>
-            <h3 class="font-headline text-xl font-bold text-white uppercase tracking-tighter">Superconducting Qubits</h3>
-          </div>
-        </a>
+        {featuredResearch.length > 0 && (
+          <a href={`/research/${featuredResearch[0].slug}/`} class="group relative overflow-hidden bg-surface-container min-h-[216px] cursor-pointer block">
+            <img
+              alt={featuredResearch[0].data.title}
+              class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
+              src={featuredResearch[0].data.introductionImage}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full">
+              <span class="bg-on-tertiary-fixed text-surface text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest mb-2 inline-block">Research</span>
+              <h3 class="font-headline text-xl font-bold text-white uppercase tracking-tighter">{featuredResearch[0].data.title}</h3>
+            </div>
+          </a>
+        )}
 
-        <!-- Neural Interfacing -->
-        <a href="/innovation-neural-interfacing.html" class="group relative overflow-hidden bg-surface-container min-h-[216px] cursor-pointer block">
-          <img
-            alt="Neural Interfacing Innovation"
-            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhEPMnb0MQ5BBhqJhXCvw7qhYBnpKmLbDVKXJ2qFWPZUxSyqF5DkPaX7zDxQH_hKY_QTNEp6P5FjNjb7uXTZqSfBZhf1S9PfLZvb5X7QXhcWGwFMh6u1SNQNt6zPnWzg"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6 w-full">
-            <span class="bg-primary-fixed-dim text-on-primary-fixed text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest mb-2 inline-block">Interface</span>
-            <h3 class="font-headline text-xl font-bold text-white uppercase tracking-tighter">Neural Interfacing</h3>
-          </div>
-        </a>
+        {featuredNews.length > 0 && (
+          <a href={`/news/${featuredNews[0].slug}/`} class="group relative overflow-hidden bg-surface-container min-h-[216px] cursor-pointer block">
+            <img
+              alt={featuredNews[0].data.title}
+              class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
+              src={featuredNews[0].data.heroImage}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full">
+              <span class="bg-primary-fixed-dim text-on-primary-fixed text-[10px] font-headline font-bold px-3 py-1 uppercase tracking-widest mb-2 inline-block">Innovation</span>
+              <h3 class="font-headline text-xl font-bold text-white uppercase tracking-tighter">{featuredNews[0].data.title}</h3>
+            </div>
+          </a>
+        )}
       </div>
     </div>
   </section>
@@ -117,44 +117,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="data-strip w-full opacity-20 group-hover:opacity-100 transition-opacity"></div>
       </a>
 
-      <a href="/innovations" class="group cursor-pointer">
+      <a href="/news" class="group cursor-pointer">
         <div class="text-5xl font-headline font-black text-outline-variant/20 mb-4 group-hover:text-primary-fixed-dim/20 transition-colors uppercase">02</div>
-        <h4 class="font-headline text-2xl font-bold text-white uppercase tracking-tighter mb-4">Innovations</h4>
-        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Hardware reveals and software breakthroughs that redefine current technological limits.</p>
+        <h4 class="font-headline text-2xl font-bold text-white uppercase tracking-tighter mb-4">News</h4>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">What, Who, and When of Tech Industry</p>
         <div class="data-strip w-full opacity-20 group-hover:opacity-100 transition-opacity"></div>
       </a>
 
       <a href="/research" class="group cursor-pointer">
         <div class="text-5xl font-headline font-black text-outline-variant/20 mb-4 group-hover:text-primary-fixed-dim/20 transition-colors uppercase">03</div>
         <h4 class="font-headline text-2xl font-bold text-white uppercase tracking-tighter mb-4">Research</h4>
-        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Peer-reviewed analysis and data-driven projections for the next decade of infrastructure.</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Latest research wordlwide</p>
         <div class="data-strip w-full opacity-20 group-hover:opacity-100 transition-opacity"></div>
       </a>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="max-w-5xl mx-auto px-8 py-32">
-    <div class="glass-panel border border-outline-variant/20 p-12 md:p-20 text-center relative overflow-hidden">
-      <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary-fixed-dim/10 blur-3xl"></div>
-      <div class="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-on-primary-container/10 blur-3xl"></div>
-      <h2 class="font-headline text-4xl md:text-5xl font-bold text-white uppercase tracking-tighter mb-6">Stay Updated on the Digital Frontier</h2>
-      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto mb-12">
-        Join over 50,000 digital architects. Weekly insights into the cybernetic evolution delivered directly to your node.
-      </p>
-      <form class="flex flex-col md:flex-row gap-0 max-w-xl mx-auto border border-outline-variant/30 focus-within:border-primary-fixed-dim transition-colors">
-        <input
-          class="bg-surface-container-lowest border-none focus:ring-0 text-white font-headline font-medium tracking-widest text-sm p-5 flex-grow placeholder:text-outline-variant uppercase"
-          placeholder="ENTER ACCESS CODE (EMAIL)"
-          type="email"
-        />
-        <button
-          class="bg-primary-fixed-dim text-on-primary-fixed px-10 py-5 font-headline font-bold uppercase tracking-widest text-sm hover:brightness-110 active:scale-95 transition-all"
-          type="submit"
-        >
-          Synchronize
-        </button>
-      </form>
     </div>
   </section>
 </BaseLayout>

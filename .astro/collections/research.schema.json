@@ -4,6 +4,9 @@
     "research": {
       "type": "object",
       "properties": {
+        "featured": {
+          "type": "boolean"
+        },
         "title": {
           "type": "string"
         },

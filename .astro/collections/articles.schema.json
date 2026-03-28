@@ -4,6 +4,9 @@
     "articles": {
       "type": "object",
       "properties": {
+        "featured": {
+          "type": "boolean"
+        },
         "title": {
           "type": "string"
         },
