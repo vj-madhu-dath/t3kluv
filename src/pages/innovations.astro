@@ -1,5 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const innovations = await getCollection('innovations');
 ---
 
 <BaseLayout
@@ -15,15 +18,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <article class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8">
-        <span class="bg-primary-fixed-dim text-on-primary-fixed text-xs font-bold px-3 py-1 uppercase tracking-widest">Neural Interface</span>
-        <h3 class="font-headline text-2xl font-bold text-white mb-4 mt-4 group-hover:text-primary-fixed-dim transition-colors">Neural Interfacing: Direct Brain-Machine Synthesis</h3>
-        <p class="text-on-surface-variant mb-6">The latest breakthroughs in non-invasive neural interfacing technology.</p>
-        <a href="/innovation-neural-interfacing.html" class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
-          Learn More
-          <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+      {innovations.map((innovation) => (
+        <a href={`/innovations/${innovation.slug}`} class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8 block">
+          <article>
+            <span class="bg-primary-fixed-dim text-on-primary-fixed text-xs font-bold px-3 py-1 uppercase tracking-widest">{innovation.data.projectName.split(':')[1]?.trim() || 'Innovation'}</span>
+            <h3 class="font-headline text-2xl font-bold text-white mb-4 mt-4 group-hover:text-primary-fixed-dim transition-colors">{innovation.data.title}: {innovation.data.description}</h3>
+            <p class="text-on-surface-variant mb-6">{innovation.data.description}</p>
+            <span class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
+              Learn More
+              <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+            </span>
+          </article>
         </a>
-      </article>
+      ))}
     </div>
   </section>
 </BaseLayout>

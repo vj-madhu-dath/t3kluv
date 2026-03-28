@@ -1,5 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const articles = await getCollection('articles');
 ---
 
 <BaseLayout
@@ -15,17 +18,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <article class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8">
-        <div class="flex items-start justify-between mb-4">
-          <span class="bg-primary-fixed-dim text-on-primary-fixed text-xs font-bold px-3 py-1 uppercase tracking-widest">Featured</span>
-        </div>
-        <h3 class="font-headline text-2xl font-bold text-white mb-4 group-hover:text-primary-fixed-dim transition-colors">Cyber Arachnids & Distributed Surveillance Networks</h3>
-        <p class="text-on-surface-variant mb-6">Exploring the evolution of decentralized surveillance systems and their implications for digital security.</p>
-        <a href="/article-cyber-arachnid.html" class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
-          Read More
-          <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+      {articles.map((article, index) => (
+        <a href={`/articles/${article.slug}`} class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8 block">
+          <article>
+            <div class="flex items-start justify-between mb-4">
+              {index === 0 && (
+                <span class="bg-primary-fixed-dim text-on-primary-fixed text-xs font-bold px-3 py-1 uppercase tracking-widest">Featured</span>
+              )}
+            </div>
+            <h3 class="font-headline text-2xl font-bold text-white mb-4 group-hover:text-primary-fixed-dim transition-colors">{article.data.title}</h3>
+            <p class="text-on-surface-variant mb-6">{article.data.description}</p>
+            <span class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
+              Read More
+              <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+            </span>
+          </article>
         </a>
-      </article>
+      ))}
     </div>
   </section>
 </BaseLayout>

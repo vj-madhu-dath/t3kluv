@@ -1,0 +1,68 @@
+{
+  "$ref": "#/definitions/articles",
+  "definitions": {
+    "articles": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "readTime": {
+          "type": "number"
+        },
+        "publishDate": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "heroImage": {
+          "type": "string"
+        },
+        "heroImageAlt": {
+          "type": "string"
+        },
+        "contentImage": {
+          "type": "string"
+        },
+        "contentImageAlt": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string"
+        },
+        "quoteAttribution": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "author",
+        "readTime",
+        "publishDate",
+        "tags",
+        "heroImage",
+        "heroImageAlt",
+        "contentImage",
+        "contentImageAlt",
+        "quote",
+        "quoteAttribution"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

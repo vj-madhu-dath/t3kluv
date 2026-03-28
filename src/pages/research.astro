@@ -1,5 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const research = await getCollection('research');
 ---
 
 <BaseLayout
@@ -15,15 +18,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <article class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8">
-        <span class="bg-on-tertiary-fixed text-surface text-xs font-bold px-3 py-1 uppercase tracking-widest">Quantum Computing</span>
-        <h3 class="font-headline text-2xl font-bold text-white mb-4 mt-4 group-hover:text-primary-fixed-dim transition-colors">Superconducting Qubits: The Next Frontier in Quantum Computing</h3>
-        <p class="text-on-surface-variant mb-6">Advanced research into superconducting qubit architecture and quantum error correction.</p>
-        <a href="/research-superconducting-qubits.html" class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
-          Explore
-          <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+      {research.map((paper) => (
+        <a href={`/research/${paper.slug}`} class="bg-surface-container border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all group cursor-pointer p-8 block">
+          <article>
+            <span class="bg-on-tertiary-fixed text-surface text-xs font-bold px-3 py-1 uppercase tracking-widest">{paper.data.category}</span>
+            <h3 class="font-headline text-2xl font-bold text-white mb-4 mt-4 group-hover:text-primary-fixed-dim transition-colors">{paper.data.title}</h3>
+            <p class="text-on-surface-variant mb-6">{paper.data.description}</p>
+            <span class="text-primary-fixed-dim hover:text-primary-fixed font-headline font-bold uppercase text-sm tracking-wider inline-flex items-center gap-2 group/link">
+              Explore
+              <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward_ios</span>
+            </span>
+          </article>
         </a>
-      </article>
+      ))}
     </div>
   </section>
 </BaseLayout>

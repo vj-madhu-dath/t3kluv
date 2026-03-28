@@ -1,0 +1,132 @@
+{
+  "$ref": "#/definitions/research",
+  "definitions": {
+    "research": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "shortTitle": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "whitepaperId": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "authorTitle": {
+          "type": "string"
+        },
+        "publishDate": {
+          "type": "string"
+        },
+        "readTime": {
+          "type": "number"
+        },
+        "abstract": {
+          "type": "string"
+        },
+        "introduction": {
+          "type": "string"
+        },
+        "introductionImage": {
+          "type": "string"
+        },
+        "introductionImageAlt": {
+          "type": "string"
+        },
+        "methodology": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "specs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "specs"
+          ],
+          "additionalProperties": false
+        },
+        "empiricalImage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "empiricalImageAlt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "shortTitle",
+        "description",
+        "category",
+        "whitepaperId",
+        "author",
+        "authorTitle",
+        "publishDate",
+        "readTime",
+        "abstract",
+        "introduction",
+        "introductionImage",
+        "introductionImageAlt",
+        "methodology",
+        "references",
+        "tags"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
